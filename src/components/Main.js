@@ -6,6 +6,7 @@ export default function Main() {
     <div className="Main">
       <h3>HOT NOW</h3>
       <p>Try these hot items, you won't regret it!</p>
+      <img src="cinna.jpg" alt="Cinna" className="image" />
     </div>
   );
 }
