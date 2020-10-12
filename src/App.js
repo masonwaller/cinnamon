@@ -1,17 +1,21 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar.js";
-import Main from "./components/Main.js";
-import Pickup from "./components/Pickup.js";
+import { Route, Switch } from "react-router-dom";
+import Home from "./components/Home.js";
+import About from "./components/About.js";
+import Orders from "./components/Orders.js";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <div className="maindiv">
-        <Main />
-        <Pickup />
-      </div>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/about" component={About} />
+        <Route path="/orders" component={Orders} />
+        <Route component={Error} />
+      </Switch>
     </div>
   );
 }
