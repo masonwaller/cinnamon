@@ -6,13 +6,13 @@ function App() {
   return (
     <div className="Navbar">
       <h1 className="p">CinnaRoll</h1>
-      <Link to="/">
+      <Link to="/" style={{ textDecoration: "none" }}>
         <p className="p">Home</p>
       </Link>
-      <Link to="/orders">
+      <Link to="/orders" style={{ textDecoration: "none" }}>
         <p className="p">Orders</p>
       </Link>
-      <Link to="/about">
+      <Link to="/about" style={{ textDecoration: "none" }}>
         <p className="p">About</p>
       </Link>
     </div>
