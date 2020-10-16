@@ -47,3 +47,9 @@
 .h3 {
   text-align: center;
 }
+
+.about {
+  text-align: center;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
