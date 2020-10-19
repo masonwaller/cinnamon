@@ -15,6 +15,9 @@ function App() {
       <Link to="/about" style={{ textDecoration: "none" }}>
         <p className="p">About</p>
       </Link>
+      <Link to="/account" style={{ textDecoration: "none" }}>
+        <p className="p">Login/Sign Up</p>
+      </Link>
     </div>
   );
 }
