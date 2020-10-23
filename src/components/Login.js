@@ -1,14 +1,16 @@
 import React from "react";
+import Signup from "./Signup.js";
 
 export default function Login() {
   const [email, setEmail] = React.useState("");
   const [pw, setPW] = React.useState("");
+  const [num, setNum] = React.useState(true);
 
   const handleSubmit = e => {
     e.preventDefault();
     console.log("submit");
   };
-  return (
+  return num ? (
     <div>
       <form onSubmit={e => handleSubmit(e)}>
         <label>
@@ -25,6 +27,9 @@ export default function Login() {
         </label>
         <input type="submit" value="Submit" />
       </form>
+      <button onClick={() => setNum(false)}>Create an Account</button>
     </div>
+  ) : (
+    <Signup setNum={setNum} />
   );
 }
