@@ -7,7 +7,17 @@ export default function Signup(props) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log("submit");
+    if (name === "" || pw === "" || email === "") {
+      alert("Please fill out all fields.");
+    } else {
+      fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: name, email: email, password: pw })
+      })
+        .then(res => res.json())
+        .then(res => console.log(res));
+    }
   };
   return (
     <div>
