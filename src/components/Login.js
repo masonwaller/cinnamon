@@ -8,7 +8,17 @@ export default function Login() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log("submit");
+    if (email === "" || pw === "") {
+      alert("Please fill out all fields.");
+    } else {
+      fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email, password: pw })
+      })
+        .then(res => res.json())
+        .then(res => console.log(res));
+    }
   };
   return num ? (
     <div>
