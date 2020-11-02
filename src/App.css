@@ -53,3 +53,24 @@
   padding-left: 10vw;
   padding-right: 10vw;
 }
+
+.login {
+  display: flex;
+  height: 70vh;
+  width: 70vw;
+  margin: 13vw;
+  margin-top: 2.5vw;
+  border: 0.5vw solid pink;
+  padding: 1.5vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.input {
+  width: 60vw;
+  align-self: center;
+  margin: 1.5vw;
+}
