@@ -17,7 +17,7 @@ export default function Signup(props) {
         body: JSON.stringify({ name: name, email: email, password: pw })
       })
         .then(res => res.json())
-        .then(res => console.log(res));
+        .then(res => props.setUser(res));
     }
   };
   return (

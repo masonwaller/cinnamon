@@ -2,7 +2,7 @@ import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 
-function App() {
+function Navbar(props) {
   return (
     <div className="Navbar">
       <h1 className="p">CinnaRoll</h1>
@@ -15,11 +15,21 @@ function App() {
       <Link to="/about" style={{ textDecoration: "none" }}>
         <p className="p">About</p>
       </Link>
-      <Link to="/account" style={{ textDecoration: "none" }}>
-        <p className="p">Login/Sign Up</p>
-      </Link>
+      {props.user === "" ? (
+        <Link to="/account" style={{ textDecoration: "none" }}>
+          <p className="p">Login/Sign Up</p>
+        </Link>
+      ) : (
+        <Link
+          to="/"
+          style={{ textDecoration: "none" }}
+          onClick={() => props.setUser("")}
+        >
+          <p className="p">Logout</p>
+        </Link>
+      )}
     </div>
   );
 }
 
-export default App;
+export default Navbar;
