@@ -2,7 +2,7 @@ import React from "react";
 import Signup from "./Signup.js";
 import "../App.css";
 
-export default function Login() {
+export default function Login(props) {
   const [email, setEmail] = React.useState("");
   const [pw, setPW] = React.useState("");
   const [num, setNum] = React.useState(true);
@@ -18,7 +18,7 @@ export default function Login() {
         body: JSON.stringify({ email: email, password: pw })
       })
         .then(res => res.json())
-        .then(res => console.log(res));
+        .then(res => props.setUser(res));
     }
   };
   return num ? (
@@ -47,6 +47,6 @@ export default function Login() {
       <button onClick={() => setNum(false)}>Create an Account</button>
     </div>
   ) : (
-    <Signup setNum={setNum} />
+    <Signup setNum={setNum} setUser={props.setUser} />
   );
 }
