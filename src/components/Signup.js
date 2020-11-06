@@ -8,7 +8,9 @@ export default function Signup(props) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (name === "" || pw === "" || email === "") {
+    if (props.user !== "") {
+      alert("Please logout first.");
+    } else if (name === "" || pw === "" || email === "") {
       alert("Please fill out all fields.");
     } else {
       fetch("http://localhost:3000/users", {
