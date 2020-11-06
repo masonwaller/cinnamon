@@ -9,7 +9,9 @@ export default function Login(props) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (email === "" || pw === "") {
+    if (props.user !== "") {
+      alert("Please logout first.");
+    } else if (email === "" || pw === "") {
       alert("Please fill out all fields.");
     } else {
       fetch("http://localhost:3000/login", {
@@ -47,6 +49,6 @@ export default function Login(props) {
       <button onClick={() => setNum(false)}>Create an Account</button>
     </div>
   ) : (
-    <Signup setNum={setNum} setUser={props.setUser} />
+    <Signup setNum={setNum} setUser={props.setUser} user={props.user} />
   );
 }
