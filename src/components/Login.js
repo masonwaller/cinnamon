@@ -24,29 +24,34 @@ export default function Login(props) {
     }
   };
   return num ? (
-    <div className="login">
-      <form onSubmit={e => handleSubmit(e)} className="form">
-        <label>
-          Email:
-          <input
-            type="text"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            className="input"
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="text"
-            value={pw}
-            onChange={e => setPW(e.target.value)}
-            className="input"
-          />
-        </label>
-        <input type="submit" value="Submit" className="input" />
-      </form>
-      <button onClick={() => setNum(false)}>Create an Account</button>
+    <div className="header">
+      {props.user !== "" ? (
+        <h1 className="head">Welcome back, {props.user.name}!</h1>
+      ) : null}
+      <div className="login">
+        <form onSubmit={e => handleSubmit(e)} className="form">
+          <label>
+            Email:
+            <input
+              type="text"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              className="input"
+            />
+          </label>
+          <label>
+            Password:
+            <input
+              type="text"
+              value={pw}
+              onChange={e => setPW(e.target.value)}
+              className="input"
+            />
+          </label>
+          <input type="submit" value="Submit" className="input" />
+        </form>
+        <button onClick={() => setNum(false)}>Create an Account</button>
+      </div>
     </div>
   ) : (
     <Signup setNum={setNum} setUser={props.setUser} user={props.user} />

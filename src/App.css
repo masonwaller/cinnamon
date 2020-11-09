@@ -74,3 +74,11 @@
   align-self: center;
   margin: 1.5vw;
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+.head {
+  align-self: center;
+}

@@ -23,38 +23,43 @@ export default function Signup(props) {
     }
   };
   return (
-    <div className="login">
-      <form onSubmit={e => handleSubmit(e)} calssName="form">
-        <label>
-          Name:
-          <input
-            type="text"
-            value={name}
-            onChange={e => setName(e.target.value)}
-            className="input"
-          />
-        </label>
-        <label>
-          Email:
-          <input
-            type="text"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            className="input"
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="text"
-            value={pw}
-            onChange={e => setPW(e.target.value)}
-            className="input"
-          />
-        </label>
-        <input type="submit" value="Submit" className="input" />
-      </form>
-      <button onClick={() => props.setNum(true)}>Have an Account</button>
+    <div className="header">
+      {props.user !== "" ? (
+        <h1 className="head">Welcome, {props.user.name}!</h1>
+      ) : null}
+      <div className="login">
+        <form onSubmit={e => handleSubmit(e)} calssName="form">
+          <label>
+            Name:
+            <input
+              type="text"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              className="input"
+            />
+          </label>
+          <label>
+            Email:
+            <input
+              type="text"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              className="input"
+            />
+          </label>
+          <label>
+            Password:
+            <input
+              type="text"
+              value={pw}
+              onChange={e => setPW(e.target.value)}
+              className="input"
+            />
+          </label>
+          <input type="submit" value="Submit" className="input" />
+        </form>
+        <button onClick={() => props.setNum(true)}>Have an Account</button>
+      </div>
     </div>
   );
 }
