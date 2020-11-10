@@ -17,8 +17,6 @@
 }
 
 .Main {
-  height: 70vh;
-  width: 40vw;
   margin-top: 2.5vw;
   border: 0.5vw solid pink;
   padding-left: 1.5vw;
@@ -31,8 +29,10 @@
 
 .maindiv {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
+  white-space: nowrap;
 }
 
 .orders {
