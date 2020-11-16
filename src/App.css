@@ -82,3 +82,12 @@
 .head {
   align-self: center;
 }
+
+.allList {
+  display: flex;
+  justify-content: row;
+}
+.card {
+  border: 1vw solid black;
+  margin: 1vw;
+}

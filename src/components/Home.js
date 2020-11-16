@@ -7,6 +7,12 @@ import AllItems from "./AllItems.js";
 
 export default function Home() {
   const [page, setPage] = React.useState(0);
+  const [products, setProducts] = React.useState([]);
+  React.useEffect(() => {
+    fetch("http://localhost:3000/products")
+      .then(res => res.json())
+      .then(res => setProducts(res));
+  }, []);
   return (
     <div>
       {page === 0 ? (
@@ -17,7 +23,7 @@ export default function Home() {
       ) : page === 1 ? (
         <HotItems />
       ) : (
-        <AllItems />
+        <AllItems products={products} />
       )}
     </div>
   );
